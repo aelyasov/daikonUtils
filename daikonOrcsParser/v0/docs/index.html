@@ -1,0 +1,98 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="docs.css" /> 
+</head>
+<body>
+
+<h1>daikonice</h1>
+
+<p>Used to produce pretty print oracles and violations reports produced by Haslog
+as a HTML report.
+
+
+<p class="legalstuff"><b>License:</b> BSD3
+
+<br>Authors: Wishnu Prasetya. The development is part of the EU-funded FITTEST project.
+
+<br>Copyright (C) Utrecht University, 2010.</p>
+
+<h2>Usage</h2>
+
+<blockquote class="PROGRAMLISTING">
+daikonice [option]*
+</blockquote>
+
+With options we can specify a list of oracle-report files (.txt) and a list of violation files.
+The first is produced by haslog, the second by Daikon. The program will pretty print the
+oracles in an HTML file. The oracles are assumed to specify pre- and post-conditons of events.
+Each event has a type (e.g.click), as well as the target of the event (e.g. button1). In the HTML, the oracles will be
+grouped according to the names of the event-targets, and then to the event-types. If there are a
+reported oracle has a violation, according to a given violation report, this will be indicated
+in the HTML. Furthermore, it is possible to specify a minimum number of witnesses. Oracles with
+too few number of witnesses will be ignored (not reported).
+
+<h2>Options</h2>
+
+
+<ul class=optionlist> 
+
+   <li>
+   <dl><dt>-r oracles  --oracles=oracles </dt>
+   
+   <dd>oracles is a list or oracles report files (.txt) produced by Haslog. Such a file contains a list of
+   inferred oracles/specifications in the form of pre- and post-conditions of events. A fragment of such a 
+   file is shown below, showing pre-conditions (ENTER) and post-conditions (EXIT) of the event named
+   buttonSearch.
+   
+<blockquote class="PROGRAMLISTING">
+<pre>
+===========================================================================
+buttonSearch(..):::ENTER  20 samples
+    Variables: cartTotal
+cartTotal == "$0.00"		(20 samples)
+===========================================================================
+buttonSearch(..):::EXIT1  20 samples
+    Variables: cartTotal orig(cartTotal)
+    Unmodified variables: cartTotal
+cartTotal == "$0.00"		(20 samples)
+cartTotal == orig(.artTotal)		(20 samples)
+=========================================================================== 
+</pre>
+</blockquote>
+ 
+   </dd>
+   </li>
+   
+   
+   <li>
+   <dl><dt>-v violations  --violations=violations</dt>
+   
+    <dd>violations is a list of violation files produced by Daikon (.txt). Such a file is produced
+    when we check a Daikon's binary invariant file (.inv) against one or more Daikon trace files
+    (.dtrace). A fragement of such a file is shown below:
+    
+<blockquote class="PROGRAMLISTING">
+<pre>
+At ppt buttonSearch(..):::ENTER, Invariant 'cartTotal == "$0.00"' invalidated by sample cartTotal="$100": at line 700 in file run22.dtrace
+At ppt buttonSearch(..):::ENTER, Invariant 'cartTotal == orig(.artTotal)' invalidated by sample cartTotal="$100": at line 700 in file run22.dtrace
+</pre>
+</blockquote>
+    
+   </dd>
+   </li>
+   
+   <li>
+   <dl><dt>-o html  --output=html</dt>
+   
+   <dd>To specify the name of the output .html file.</dd>
+   </li>
+   
+   <li>
+   <dl><dt>-n number  --witness-number=number</dt>
+   
+   <dd>To specify the minimum number of witnesses for an oracle to be reported in the resulting .html.</dd>
+   </li>
+</ul>
+
+</body>
+</html>

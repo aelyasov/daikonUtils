@@ -1,0 +1,29 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="docs.css" /> 
+</head>
+<body>
+
+<h1>dtrsplit</h1>
+
+<p>Used to split Daikon trace files (.dtrace) into a separate declaration files and the remaining data files.
+
+
+<p class="legalstuff"><b>License:</b> BSD3
+
+<br>Authors: Wishnu Prasetya. The development is part of the EU-funded FITTEST project.
+
+<br>Copyright (C) Utrecht University, 2010.</p>
+
+<h2>Usage</h2>
+
+<blockquote class="PROGRAMLISTING">
+dtrsplit [file]+
+</blockquote>
+
+This split the given Daikon trace files (.dtrace) into a separate declaration files and the remaining data files.
+For each f.dtrace input file, its program points declration part is separated into a new file f.decls. The
+file f.dtrace itself will now contain only the log data of the original program points.
+
+</body>
+</html>

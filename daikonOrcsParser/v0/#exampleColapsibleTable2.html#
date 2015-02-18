@@ -1,0 +1,123 @@
+<HEAD>
+<TITLE>Oracles</TITLE>
+<script type="text/javascript" src="jquery-1.10.2.js"></script>
+<!--
+<script type="text/javascript" src="ColapsibleTable.js"></script>
+-->
+<link rel="stylesheet" type="text/css" href="oracle.css"/>
+</head>
+
+<!--
+   color-sceme list:
+   0598C8	287B96	026282	3DBAE4	69C5E4
+   red: FF7373
+-->
+ 
+<BODY>
+<h1>Oracles</h1>
+<!-- stats -->
+<table border="0">
+<tr> <td>types</td> <td>:</td> <td>1</td> </tr>
+<tr> <td>subcases</td> <td>:</td> <td>2</td> </tr>
+<tr> <td>oracles</td> <td>:</td> <td>7</td> </tr>
+<tr> <td>violations</td> <td>:</td> <td>1</td> </tr>
+</table>
+
+<br/>
+
+    
+<!-- group 1 -->    
+<div height="8" bgcolor="#69C5E4">a line</div>
+
+<div bgcolor="#FF7373">
+  <div height="15"> <strong>IDY_submit_buttom (1/7)</strong> </div>
+  <div>
+    <a href="javascript:toggle_visibility('G1','G1_button');">
+      <div align="right" id="G1_button">[+] Expand </div>
+    </a>
+  </div>
+</div>
+              
+<div height=8/> 
+       
+<div id="SG1_1">  
+    <!-- subgroup 1.1 -->
+    <div height="4" bgcolor="#026282">another line</div>
+    <div bgcolor="#FF7373">  
+           <div height="15" width=580> <strong>left-click (1/4)</strong></div>
+           <div>
+               <a href="javascript:toggle_visibility('SG1_1','SG1_1_button');">
+               <div align="right" id="SG1_1_button">[+] Expand </div>
+               </a>
+           </div>
+    </div>
+       
+    <table width="780" border="0" cellpadding="4" cellspacing="0" id="SG1_1_content"> 
+        <tr>
+           <td><div align="left"> x.a.b &ge; 0 </div></td>
+           <td><div align="right"> (99) </div></td>
+           <td></td>
+        </tr>
+        
+        <tr>
+           <td><div align="left"> y.a = old(y.a) </div></td>
+           <td><div align="right"> (200) </div></td>
+           <td></td>
+        </tr>
+             
+        <tr bgcolor="#FF7373">
+           <td><div align="left"> z never changes </div></td>
+           <td><div align="right"> (200) </div></td>
+           <td><div align="right">X</div></td>
+        </tr>     
+        
+        <tr>
+           <td><div align="left"> z = [1,2,3] </div></td>
+           <td><div align="right"> (99) </div></td>
+           <td></td>
+        </tr>
+     </table>
+</div>    
+    
+<div height=8/> 
+  
+<!--  
+<div>    
+    <table width="780" border="0" cellpadding="4" cellspacing="0" id="SG1_2">
+    
+       <tr height="4" bgcolor="#026282"><td colspan="3"></td></tr>
+    
+       <tr bgcolor="#FFFFFF">
+           <td height="15" width="580"> <strong>right-click (0/3)</strong></td>
+           <td width=100>
+           <td width=100>
+               <a href="javascript:toggle_visibility('SG1_2','SG1_2_button');">
+               <div align="right" id="SG1_2_button">[+] Expand </div>
+               </a>
+           </td>
+       </tr>
+       
+        <tr style="display:none">
+           <td><div align="left"> x.a.b &ge; 0 </div></td>
+           <td><div align="right"> (99) </div></td>
+           <td></td>
+        </tr>
+        
+        <tr style="display:none">
+           <td><div align="left"> y.a = old(y.a) </div></td>
+           <td><div align="right"> (200) </div></td>
+           <td></td>
+        </tr>
+                
+        <tr style="display:none">
+           <td><div align="left"> z = [1,2,3] </div></td>
+           <td><div align="right"> (99) </div></td>
+           <td></td>
+        </tr>              
+    </table>
+     
+</div>
+-->
+
+</body>
+</html>
